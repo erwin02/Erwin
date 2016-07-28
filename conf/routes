@@ -3,7 +3,11 @@
 # ~~~~
 
 # Home page
-GET     /                                       Application.index
+GET     /                                      Application.index
+GET     /Home                                  Application.home
+GET     /Portfolio                             Application.portfolio
+GET     /About                                  Application.about
+GET     /Contact                                 Application.contact
 
 # Ignore favicon requests
 GET     /favicon.ico                            404

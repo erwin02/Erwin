@@ -3,12 +3,42 @@
 <html>
     <head>
         <title>#{get 'title' /}</title>
-        <meta charset="${_response_encoding}">
-        <link rel="stylesheet" media="screen" href="@{'/public/stylesheets/main.css'}">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         #{get 'moreStyles' /}
-        <link rel="shortcut icon" type="image/png" href="@{'/public/images/favicon.png'}">
-        <script src="@{'/public/javascripts/jquery-1.6.4.min.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+        <link rel="shortcut icon" type="image/png" href="/public/images/ber.jpg">
+        <!-- Font awesome -->
+        <link href="/public/css/font-awesome.css" rel="stylesheet">
+        <!-- Bootstrap -->
+        <link href="/public/css/bootstrap.css" rel="stylesheet">
+        <!-- flickity slider -->
+        <link href="/public/css/flickity.css" rel="stylesheet">
+        <!-- Tosrus slider -->
+        <link type="text/css" media="all" rel="stylesheet" href="/public/css/jquery.tosrus.all.css" />
+        <!-- Theme color -->
+        <link id="switcher" href="/public/css/theme-color/default.css" rel="stylesheet">
+        <!-- Main style sheet -->
+        <link rel="stylesheet" type="text/css" href="/public/stylesheets/sass/screen.css">
+        <!-- Google Font -->
+        <link href='https://fonts.googleapis.com/css?family=Merriweather' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Vollkorn' rel='stylesheet' type='text/css'>
         #{get 'moreScripts' /}
+        <!-- jQuery library -->
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script type="text/javascript" src="/public/javascripts/bootstrap.js"></script>
+        <!-- Flickity slider -->
+        <script type="text/javascript" src="/public/javascripts/flickity.pkgd.min.js"></script>
+        <script type="text/javascript" src="/public/javascripts/smoothscroll.js"></script>
+        <!-- Modernizer -->
+        <script type="text/javascript" src="/public/javascripts/modernizr.custom.js"></script>
+        <!-- Integrated Sliding Up Effect -->
+        <script type="text/javascript" src="/public/javascripts/main.js"></script>
+        <!-- Tosrus slider -->
+        <script type="text/javascript" language="javascript" src="/public/javascripts/jquery.tosrus.min.all.js"></script>
+        <!-- Custom js -->
+        <script type="text/javascript" src="/public/javascripts/custom.js"></script>
     </head>
     <body>
         #{doLayout /}

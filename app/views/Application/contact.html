@@ -1,0 +1,73 @@
+#{extends 'main.html' /}
+#{set title:messages.get('Erwin Amular|Home') /}
+
+
+<div class="wrapper">
+    <!-- Background Photographer image -->
+    <div class="hero">
+        <div class="hero__back hero__back--static"></div>
+    </div>
+    <!-- / Background Photographer image -->
+    <!-- Start Header -->
+    <header id="header">
+        <a class="logo" href="/">Bear Win</a>
+        <a id="nav-icon" href="#"><span class="fa fa-bars"></span></a>
+    </header>
+    <!-- / Header -->
+    <!-- Start Menu Popup -->
+    <div id="menu-popup">
+        <a id="close-nav" href="#"><img src="/public/images/close-icon.png" alt=""></a>
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/About">About</a></li>
+                <li><a href="/Portfolio">Portfolio</a></li>
+                <li><a href="/Contact">Contact</a></li>
+            </ul>
+        </nav>
+        <nav class="social-nav">
+            <ul>
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">Twitter</a></li>
+                <li><a href="">Google+</a></li>
+                <li><a href="">Instagram</a></li>
+            </ul>
+        </nav>
+    </div>
+    <!-- / Menu Popup -->
+    <section id="main-content">
+        <div class="container">
+            <div class="col-md-12">
+                <div class="contact-area">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <div class="contact-map">
+                                <iframe src="https://www.google.com/maps/embed/v1/place?q=LIMA+Technology+Center,+Lipa+City,+Calabarzon,+Philippines&key=AIzaSyAN0om9mFmy1QN6Wf54tXAowK4eT0ZUPrU" width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <div class="contact-form">
+                                <h3>Contact</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis velit, tempore tenetur eos cumque tempora voluptatum enim deserunt.</p>
+                                <form action="">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Name">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="email" class="form-control" placeholder="Email">
+                                    </div>
+                                    <div class="form-group">
+                                        <textarea class="form-control" rows="3" placeholder="Message"></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <input class="send-btn" type="submit" value="Send">
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
