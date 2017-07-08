@@ -1,58 +1,659 @@
 #{extends 'main.html' /}
 #{set title:messages.get('Erwin Amular|Home') /}
 
+<script>
+jQuery(document).ready(function($){
+	var timelineBlocks = $('.cd-timeline-block'),
+		offset = 0.8;
 
-<div class="wrapper">
-    <!-- Background image top -->
-    <div class="hero">
-        <div class="hero__back hero__back--static"></div>
+	//hide timeline blocks which are outside the viewport
+	hideBlocks(timelineBlocks, offset);
+
+	//on scolling, show/animate timeline blocks when enter the viewport
+	$(window).on('scroll', function(){
+		(!window.requestAnimationFrame)
+			? setTimeout(function(){ showBlocks(timelineBlocks, offset); }, 100)
+			: window.requestAnimationFrame(function(){ showBlocks(timelineBlocks, offset); });
+	});
+
+	function hideBlocks(blocks, offset) {
+		blocks.each(function(){
+			( $(this).offset().top > $(window).scrollTop()+$(window).height()*offset ) && $(this).find('.cd-timeline-img, .cd-timeline-content').addClass('is-hidden');
+		});
+	}
+
+	function showBlocks(blocks, offset) {
+		blocks.each(function(){
+			( $(this).offset().top <= $(window).scrollTop()+$(window).height()*offset && $(this).find('.cd-timeline-img').hasClass('is-hidden') ) && $(this).find('.cd-timeline-img, .cd-timeline-content').removeClass('is-hidden').addClass('bounce-in');
+		});
+	}
+});
+</script>
+
+<!-- Navigation -->
+<a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle"><i class="fa fa-bars"></i></a>
+<nav id="sidebar-wrapper">
+    <ul class="sidebar-nav">
+        <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
+        <li class="sidebar-brand">
+            <a href="#top" onclick=$("#menu-close").click();>Start</a>
+        </li>
+        <li>
+            <a href="#top" onclick=$("#menu-close").click();>Home</a>
+        </li>
+        <li>
+            <a href="#about" onclick=$("#menu-close").click();>About</a>
+        </li>
+        <li>
+            <a href="#resume" onclick=$("#menu-close").click();>Resume</a>
+        </li>
+        <li>
+            <a href="#skills" onclick=$("#menu-close").click();>Skills</a>
+        </li>
+        <li>
+            <a href="#portfolio" onclick=$("#menu-close").click();>Portfolio</a>
+        </li>
+        <li>
+            <a href="#contact" onclick=$("#menu-close").click();>Contact</a>
+        </li>
+    </ul>
+</nav>
+
+<!-- Header -->
+<div id="top" class="header">
+    <div class="text-vertical-center">
+        <h1>Erwin Amular</h1>
+        <h3>Creative From The Beginning</h3>
+        <br>
+        <ul class="list-inline">
+            <li>
+                <a href="https://www.facebook.com/erwin.amular"><img src="/public/images/facebook.png"></a>
+                <div class="fb-hover">Facebook</div>
+            </li>
+            <li>
+                <a href="https://www.linkedin.com/in/erwin-amular-5a3a78100/"><img src="/public/images/linkin.png"></a>
+                <div class="fb-hover">Linkedin</div>
+            </li>
+            <li>
+                <a href="https://www.instagram.com/bear_win/"><img src="/public/images/instagram.png"></a>
+                <div class="fb-hover">Instagram</div>
+            </li>
+            <li>
+                <a href="#" class="not-active"><img src="/public/images/skype.png"></a>
+                <div class="fb-hover">Skype ID: erwin.amular</div>
+            </li>
+        </ul>
+        <br>
+        <a href="#about" class="btn btn-dark btn-lg">Find Out More</a>
     </div>
-    <!-- / Background Photographer image -->
-    <!-- Start Header -->
-    <header id="header">
-        <a id="nav-icon" href="#"><span class="fa fa-bars"></span></a>
-    </header>
-    <!-- / Header -->
-    <!-- Start Menu Popup -->
-    <div id="menu-popup">
-        <a id="close-nav" href="#"><img src="/public/images/close-icon.png" alt=""></a>
-        <nav class="nav-menu">
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/About">About</a></li>
-                <li><a href="/Portfolio">Portfolio</a></li>
-                <li><a href="/Contact">Contact</a></li>
-            </ul>
-        </nav>
-        <nav class="social-nav">
-            <ul>
-                <li><a href="#">Facebook</a></li>
-                <li><a href="#">Twitter</a></li>
-                <li><a href="">Google+</a></li>
-                <li><a href="">Instagram</a></li>
-            </ul>
-        </nav>
-    </div>
-    <!-- / Menu Popup -->
-    <section id="main-content">
-        <div class="container">
-            <div class="col-md-12">
-                <div class="main-content-area">
-                    <h2 class="animated fadeInDown">HI, I'M ERWIN AMULAR</h2>
-                    <p class="slogan animated fadeInDown">Creative From Beginning</p>
+</div>
+
+<!-- About -->
+<section id="about" class="about">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center aboutMe">
+                <img class="ber img-circle" src="/public/images/profile.jpg">
+                <h1>ABOUT ME</h1>
+                <hr>
+                <br>
+                <p class="lead">
+                    I'm a Web Design Developer for almost 2 years and 5 months in a Electronic Manufacturing Company and i'm good in creating frond-end layout using web development languages HTML, SCSS, Javascript, Jquery, Angular JS. I have also a knowledge in Adobe Photoshop application I usually use this for editing and modifying images.
+                    <br>
+                    <br>
+                    I was the acting GUI for our team and i have a knowledge also in merging and restarting the stage server using putty. I also do creating eDM "electronic Direct Marketing" layout for the monthly promotions of our company's products.
+                </p>
+            </div>
+            <div class="col-lg-12 basicInfo">
+                <div class="row">
+                    <div class="col-md-6">
+                        <table>
+                            <tr>
+                                <th>
+                                    <img src="/public/images/cp.png">
+                                </th>
+                                <td>
+                                    <p>0905 8546 268</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <img src="/public/images/email.png">
+                                </th>
+                                <td>
+                                    <p>amularerwin@gmail.com</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <img src="/public/images/website.png">
+                                </th>
+                                <td>
+                                    <p>http://erwinamular.herokuapp.com/</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <img src="/public/images/address.png">
+                                </th>
+                                <td>
+                                    <p>Bugtong na Pulo, Lipa City, Batangas</p>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="resume">
+                            <img class="signature" src="public/images/Signature.png">
+                            <br>
+                            <a href="https://drive.google.com/open?id=0B-HkfnS4D5atek9aRmtEN3I4cUE" download>
+                            <button class="downloadBtn">
+                                Download my resume <span class="glyphicon glyphicon-cloud-download"></span>
+                            </button>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="explore-btn-area">
-            <a class="explore-btn animated fadeInDown" href="/Portfolio">
-                <span>Explore</span>
-                <i class="fa fa-angle-down"></i>
-            </a>
-        </div>
-    </section>
-    <!-- Start Explore btn -->
 
-</div>
-<!-- / Explore btn -->
+        <!-- /.row -->
+    </div>
+    <!-- /.container -->
+</section>
+
+<!-- Resume -->
+<section id="resume">
+    <header>
+        <h1>RESUME</h1>
+        <hr>
+    </header>
+    <div class="container">
+        <section id="cd-timeline" class="cd-container">
+            <div class="cd-timeline-block">
+                <div class="cd-timeline-img cd-picture">
+                    <img src="/public/images/objectives.png" alt="Picture">
+                </div> <!-- cd-timeline-img -->
+
+                <div class="cd-timeline-content">
+                    <h2>OBJECTIVES</h2>
+                    <p>To be part of prestigious and dynamic company, be able to use my skill and contribute for the growth and success of the company through my hard work, dedication and perseverance.</p>
+                </div> <!-- cd-timeline-content -->
+            </div> <!-- cd-timeline-block -->
+
+            <div class="cd-timeline-block">
+                <div class="cd-timeline-img cd-movie">
+                    <img src="/public/images/experience.png" alt="Movie">
+                </div> <!-- cd-timeline-img -->
+
+                <div class="cd-timeline-content">
+                    <h2>SOFTWARE ENGINEER / FRONT-END WEB DEVELOPER </h2>
+                    <span>Kinpo Electronics Phils. - February 02, 2015 to Present</span>
+                    <p> -	Works in a team environment in the design and execution of Web development.
+                        <br>
+                        -	Maintain and Develop XZYPrinting Website for all regions design layouts and its UI.
+                        <br>
+                        -	Create any new XYZprinting Product launch page for all regions.
+                        <br>
+                        -	Create eDM (Electronic Mail Direct Marketing) UI for all XYZPrinting promotion launch.
+                        <br>
+                        -	Create and modifying the improvement of Serial Number Backstage Layout.
+                        <br>
+                        -	Create Notification Backstage Layout.
+                    </p>
+                    <span class="cd-date">February 02, 2015</span>
+                </div> <!-- cd-timeline-content -->
+            </div> <!-- cd-timeline-block -->
+
+            <div class="cd-timeline-block">
+                <div class="cd-timeline-img cd-picture">
+                    <img src="/public/images/training.png" alt="Picture">
+                </div> <!-- cd-timeline-img -->
+
+                <div class="cd-timeline-content">
+                    <h2>TRAINING / SEMINAR ATTENDED</h2>
+                    <ul>
+                        <li>
+                            <h3>Web Development with HTML5, CSS3 and Bootstrap</h3>
+                            <span>Active Learning <br> Makati City, Metro Manila <br> March 21 – 22, 2016</span>
+                        </li>
+                        <li>
+                            <h3>Comprehensive Javascript and jQuery Programming</h3>
+                            <span>Active Learning <br> Makati City, Metro Manila <br> March 30 – April 01, 2016</span>
+                        </li>
+                    </ul>
+                    <span class="cd-date">March 2016</span>
+                </div> <!-- cd-timeline-content -->
+            </div> <!-- cd-timeline-block -->
+
+            <div class="cd-timeline-block">
+                <div class="cd-timeline-img cd-movie">
+                    <img src="/public/images/education.png" alt="Location">
+                </div> <!-- cd-timeline-img -->
+
+                <div class="cd-timeline-content">
+                    <h2>EDUCATION</h2>
+                    <ul>
+                        <li>
+                            <h3>Bachelor of Science in Information Technology</h3>
+                            <span>ISABELA STATE UNIVERSITY (San Fabian, Echague, Isabela) <br> 2010-2014</span>
+                        </li>
+                    </ul>
+                    <span class="cd-date">April 07, 2014</span>
+                </div> <!-- cd-timeline-content -->
+            </div> <!-- cd-timeline-block -->
+
+        </section>
+    </div>
+</section>
+<section id="skills">
+    <div class="container Skills">
+        <div class="row skillsContent">
+            <h1>SKILLS</h1>
+            <hr>
+            <div class="col-sm-3 loaders">
+                <canvas class="loader1"></canvas>
+                <p>HTML / HTML5</p>
+            </div>
+            <div class="col-sm-3 loaders">
+                <canvas class="loader2"></canvas>
+                <p>CSS / CSS3 / SASS</p>
+            </div>
+            <div class="col-sm-3 loaders">
+                <canvas class="loader3"></canvas>
+                <p>Javascript</p>
+            </div>
+            <div class="col-sm-3 loaders">
+                <canvas class="loader4"></canvas>
+                <p>Jquery</p>
+            </div>
+        </div>
+        <div class="row skillsContent">
+            <div class="col-sm-3 loaders">
+                <canvas class="loader5"></canvas>
+                <p>Photoshop</p>
+            </div>
+            <div class="col-sm-3 loaders">
+                <canvas class="loader6"></canvas>
+                <p>Bootstrap</p>
+            </div>
+            <div class="col-sm-3 loaders">
+                <canvas class="loader7"></canvas>
+                <p>Git</p>
+            </div>
+            <div class="col-sm-3 loaders">
+                <canvas class="loader8"></canvas>
+                <p>Angular JS</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Portfolio -->
+<section id="portfolio" class="portfolio">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 col-lg-offset-1 text-center">
+                <h2>My Work</h2>
+                <hr>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="portfolio-item">
+                            <img class="img-portfolio img-responsive" src="/public/images/portfolio/img1.png" onclick="openModal();currentSlide(1)">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="portfolio-item">
+                            <img class="img-portfolio img-responsive" src="/public/images/portfolio/img2.png" onclick="openModal();currentSlide(2)">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="portfolio-item">
+                            <img class="img-portfolio img-responsive" src="/public/images/portfolio/img3.png" onclick="openModal();currentSlide(3)">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="portfolio-item">
+                            <img class="img-portfolio img-responsive" src="/public/images/portfolio/img4.png" onclick="openModal();currentSlide(4)">
+                        </div>
+                    </div>
+                </div>
+                <!-- /.row (nested) -->
+                <a href="#" class="btn btn-dark">View More Items</a>
+            </div>
+            <!-- /.col-lg-10 -->
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-------Pop up Modal--------->
+    <div id="myModal" class="modal">
+        <span class="close cursor" onclick="closeModal()">&times;</span>
+        <div class="modal-content">
+
+            <div class="mySlides">
+                <div class="numbertext">1 / 4</div>
+                <img class="img-responsive" style="width:100%;" src="/public/images/portfolio/img1.png">
+            </div>
+
+            <div class="mySlides">
+                <div class="numbertext">2 / 4</div>
+                <img class="img-responsive" style="width:100%;" src="/public/images/portfolio/img2.png">
+            </div>
+
+            <div class="mySlides">
+                <div class="numbertext">3 / 4</div>
+                <img class="img-responsive" style="width:100%;" src="/public/images/portfolio/img3.png">
+            </div>
+
+            <div class="mySlides">
+                <div class="numbertext">4 / 4</div>
+                <img class="img-responsive" style="width:100%;" src="/public/images/portfolio/img4.png">
+            </div>
+
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+            <div class="caption-container">
+                <p id="caption"></p>
+            </div>
+            <div class="column">
+                <img class="img-responsive demo cursor" src="/public/images/portfolio/img1.png" style="width:100%; height: 122px;" onclick="currentSlide(1)" alt="XYZPrinting Website">
+            </div>
+            <div class="column">
+                <img class="img-responsive demo cursor" src="/public/images/portfolio/img2.png" style="width:100%; height: 122px;" onclick="currentSlide(2)" alt="XYZeShop Website">
+            </div>
+            <div class="column">
+                <img class="img-responsive demo cursor" src="/public/images/portfolio/img3.png" style="width:100%; height: 122px;" onclick="currentSlide(3)" alt="Serial Number Backstage">
+            </div>
+            <div class="column">
+                <img class="img-responsive demo cursor" src="/public/images/portfolio/img4.png" style="width:100%; height: 122px;" onclick="currentSlide(4)" alt="Holiday Notification Backstage">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact us -->
+<section id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 col-lg-offset-1 text-center">
+                <h2>Contact</h2>
+                <hr>
+                <div id="form-main">
+                    <div id="form-div">
+                        <form class="form" id="form1">
+                            <p class="name">
+                                <input name="name" type="text" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input" placeholder="Name" id="name" />
+                            </p>
+                            <p class="email">
+                                <input name="email" type="text" class="validate[required,custom[email]] feedback-input" id="email" placeholder="Email" />
+                            </p>
+                            <p class="text">
+                                <textarea name="text" class="validate[required,length[6,300]] feedback-input" id="comment" placeholder="Comment"></textarea>
+                            </p>
+                            <div class="submit">
+                                <input type="submit" value="SEND" id="button-blue"/>
+                                <div class="ease"></div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<aside>
+    <a id="to-top" href="#top" class="btn btn-dark btn-lg"><i class="fa fa-chevron-up fa-fw fa-1x"></i></a>
+</aside>
+<!-- Footer -->
+<!--<footer>-->
+    <!--<a id="to-top" href="#top" class="btn btn-dark btn-lg"><i class="fa fa-chevron-up fa-fw fa-1x"></i></a>-->
+<!--</footer>-->
+
+<!-- Custom Theme JavaScript -->
+<script>
+    // Closes the sidebar menu
+    $("#menu-close").click(function(e) {
+        e.preventDefault();
+        $("#sidebar-wrapper").toggleClass("active");
+    });
+    // Opens the sidebar menu
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#sidebar-wrapper").toggleClass("active");
+    });
+    // Scrolls to the selected menu item on the page
+    $(function() {
+        $('a[href*=#]:not([href=#],[data-toggle],[data-target],[data-slide])').click(function() {
+            if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
+                var target = $(this.hash);
+                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                if (target.length) {
+                    $('html,body').animate({
+                        scrollTop: target.offset().top
+                    }, 1000);
+                    return false;
+                }
+            }
+        });
+    });
+    //#to-top button appears after scrolling
+    var fixed = false;
+    $(document).scroll(function() {
+        if ($(this).scrollTop() > 250) {
+            if (!fixed) {
+                fixed = true;
+                // $('#to-top').css({position:'fixed', display:'block'});
+                $('#to-top').show("slow", function() {
+                    $('#to-top').css({
+                        position: 'fixed',
+                        display: 'block'
+                    });
+                });
+            }
+        } else {
+            if (fixed) {
+                fixed = false;
+                $('#to-top').hide("slow", function() {
+                    $('#to-top').css({
+                        display: 'none'
+                    });
+                });
+            }
+        }
+    });
+    // Disable Google Maps scrolling
+    // See http://stackoverflow.com/a/25904582/1607849
+    // Disable scroll zooming and bind back the click event
+    var onMapMouseleaveHandler = function(event) {
+        var that = $(this);
+        that.on('click', onMapClickHandler);
+        that.off('mouseleave', onMapMouseleaveHandler);
+        that.find('iframe').css("pointer-events", "none");
+    }
+    var onMapClickHandler = function(event) {
+            var that = $(this);
+            // Disable the click handler until the user leaves the map area
+            that.off('click', onMapClickHandler);
+            // Enable scrolling zoom
+            that.find('iframe').css("pointer-events", "auto");
+            // Handle the mouse leave event
+            that.on('mouseleave', onMapMouseleaveHandler);
+        }
+        // Enable map zooming with mouse scroll when the user clicks the map
+    $('.map').on('click', onMapClickHandler);
+</script>
+<script>
+    $(document).ready(function(){
+            $('.loader1').waypoint(function() {
+                $('.loader1').ClassyLoader({
+                    speed: 10,
+                    diameter: 80,
+                    fontSize: '30px',
+                    fontFamily: 'Raleway',
+                    fontColor: '#00b36b',
+                    lineColor: '#00b36b',
+                    percentage: 90,
+                    lineWidth: 20,
+                    start: 'top',
+                    remainingLineColor: '#333333'
+                });
+            }, {
+                offset: '80%'
+            });
+            $('.loader2').waypoint(function() {
+                 $('.loader2').ClassyLoader({
+                    speed: 10,
+                    diameter: 80,
+                    fontSize: '30px',
+                    fontFamily: 'Raleway',
+                    fontColor: '#00b36b',
+                    lineColor: '#00b36b',
+                    percentage: 90,
+                    lineWidth: 20,
+                    start: 'top',
+                    remainingLineColor: '#333333'
+                });
+            }, {
+                offset: '70%'
+            });
+            $('.loader3').waypoint(function() {
+                 $('.loader3').ClassyLoader({
+                    speed: 10,
+                    diameter: 80,
+                    fontSize: '30px',
+                    fontFamily: 'Raleway',
+                    fontColor: '#00b36b',
+                    lineColor: '#00b36b',
+                    percentage: 65,
+                    lineWidth: 20,
+                    start: 'top',
+                    remainingLineColor: '#333333'
+                });
+            }, {
+                offset: '60%'
+            });
+            $('.loader4').waypoint(function() {
+                 $('.loader4').ClassyLoader({
+                    speed: 10,
+                    diameter: 80,
+                    fontSize: '30px',
+                    fontFamily: 'Raleway',
+                    fontColor: '#00b36b',
+                    lineColor: '#00b36b',
+                    percentage: 70,
+                    lineWidth: 20,
+                    start: 'top',
+                    remainingLineColor: '#333333'
+                });
+            }, {
+                offset: '60%'
+            });
+            $('.loader5').waypoint(function() {
+                 $('.loader5').ClassyLoader({
+                    speed: 10,
+                    diameter: 80,
+                    fontSize: '30px',
+                    fontFamily: 'Raleway',
+                    fontColor: '#00b36b',
+                    lineColor: '#00b36b',
+                    percentage: 80,
+                    lineWidth: 20,
+                    start: 'top',
+                    remainingLineColor: '#333333'
+                });
+            }, {
+                offset: '80%'
+            });
+            $('.loader6').waypoint(function() {
+                 $('.loader6').ClassyLoader({
+                    speed: 10,
+                    diameter: 80,
+                    fontSize: '30px',
+                    fontFamily: 'Raleway',
+                    fontColor: '#00b36b',
+                    lineColor: '#00b36b',
+                    percentage: 60,
+                    lineWidth: 20,
+                    start: 'top',
+                    remainingLineColor: '#333333'
+                });
+            }, {
+                offset: '80%'
+            });
+            $('.loader7').waypoint(function() {
+                 $('.loader7').ClassyLoader({
+                    speed: 10,
+                    diameter: 80,
+                    fontSize: '30px',
+                    fontFamily: 'Raleway',
+                    fontColor: '#00b36b',
+                    lineColor: '#00b36b',
+                    percentage: 50,
+                    lineWidth: 20,
+                    start: 'top',
+                    remainingLineColor: '#333333'
+                });
+            }, {
+                offset: '80%'
+            });
+             $('.loader8').waypoint(function() {
+                 $('.loader8').ClassyLoader({
+                    speed: 10,
+                    diameter: 80,
+                    fontSize: '30px',
+                    fontFamily: 'Raleway',
+                    fontColor: '#00b36b',
+                    lineColor: '#00b36b',
+                    percentage: 50,
+                    lineWidth: 20,
+                    start: 'top',
+                    remainingLineColor: '#333333'
+                });
+            }, {
+                offset: '80%'
+            });
+        });
+</script>
+<script>
+function openModal() {
+  document.getElementById('myModal').style.display = "block";
+}
+
+function closeModal() {
+  document.getElementById('myModal').style.display = "none";
+}
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  var captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+</script>
+
 
 
