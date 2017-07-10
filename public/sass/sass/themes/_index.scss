@@ -1,19 +1,16 @@
-@import 'variables'; // colors, fonts etc...
-
-@import 'mixin'; // custom mixins
-
-@import 'layout'; // responsive grid and media queries
+@import 'variables';
+@import 'mixin';
+@import 'layout';
 
 html,
 body {
     width: 100%;
     height: 100%;
+    padding: 0;
+    margin: 0;
+    //overflow-x: hidden;
 }
 
-body .container {
-    max-width: 1100px;
-    font-family: 'Raleway', sans-serif;
-}
 ol, ul {
   list-style: none;
 }
@@ -65,91 +62,7 @@ hr.small {
     max-width: 100px;
 }
 
-/* Side Menu */
 
-#sidebar-wrapper {
-    z-index: 1000;
-    position: fixed;
-    right: 0;
-    width: 250px;
-    height: 100%;
-    transform: translateX(250px);
-    overflow-y: auto;
-    background: rgba(0, 0, 0, 0.4);
-    -webkit-transition: all 0.4s ease 0s;
-    -moz-transition: all 0.4s ease 0s;
-    -ms-transition: all 0.4s ease 0s;
-    -o-transition: all 0.4s ease 0s;
-    transition: all 0.4s ease 0s;
-}
-
-.sidebar-nav {
-    position: absolute;
-    top: 0;
-    width: 250px;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
-.sidebar-nav li {
-    text-indent: 20px;
-    line-height: 40px;
-}
-
-.sidebar-nav li a {
-    display: block;
-    text-decoration: none;
-    color: #fff;
-    font-size: 16pt;
-}
-
-.sidebar-nav li a:hover {
-    text-decoration: none;
-    color: #fff;
-    background: rgba(255,255,255,0.2);
-}
-
-.sidebar-nav li a:active,
-.sidebar-nav li a:focus {
-    text-decoration: none;
-}
-
-.sidebar-nav > .sidebar-brand {
-    height: 55px;
-    font-size: 18px;
-    line-height: 55px;
-}
-
-.sidebar-nav > .sidebar-brand a {
-    color: #fff;
-}
-
-.sidebar-nav > .sidebar-brand a:hover {
-    color: #fff;
-    background: none;
-}
-
-#menu-toggle {
-    z-index: 1;
-    position: fixed;
-    top: 0;
-    right: 0;
-}
-
-#sidebar-wrapper.active {
-    right: 250px;
-    width: 250px;
-    -webkit-transition: all 0.4s ease 0s;
-    -moz-transition: all 0.4s ease 0s;
-    -ms-transition: all 0.4s ease 0s;
-    -o-transition: all 0.4s ease 0s;
-    transition: all 0.4s ease 0s;
-}
-
-.toggle {
-    margin: 5px 5px 0 0;
-}
 
 /* Header */
 
@@ -163,6 +76,91 @@ hr.small {
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
+    /* Side Menu */
+
+    #sidebar-wrapper {
+        z-index: 1000;
+        position: fixed;
+        right: 0;
+        width: 250px;
+        height: 100%;
+        transform: translateX(250px);
+        overflow-y: auto;
+        background: rgba(0, 0, 0, 0.4);
+        -webkit-transition: all 0.4s ease 0s;
+        -moz-transition: all 0.4s ease 0s;
+        -ms-transition: all 0.4s ease 0s;
+        -o-transition: all 0.4s ease 0s;
+        transition: all 0.4s ease 0s;
+    }
+
+    .sidebar-nav {
+        position: absolute;
+        top: 0;
+        width: 250px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    .sidebar-nav li {
+        text-indent: 20px;
+        line-height: 40px;
+    }
+
+    .sidebar-nav li a {
+        display: block;
+        text-decoration: none;
+        color: #fff;
+        font-size: 16pt;
+    }
+
+    .sidebar-nav li a:hover {
+        text-decoration: none;
+        color: #fff;
+        background: rgba(255,255,255,0.2);
+    }
+
+    .sidebar-nav li a:active,
+    .sidebar-nav li a:focus {
+        text-decoration: none;
+    }
+
+    .sidebar-nav > .sidebar-brand {
+        height: 55px;
+        font-size: 18px;
+        line-height: 55px;
+    }
+
+    .sidebar-nav > .sidebar-brand a {
+        color: #fff;
+    }
+
+    .sidebar-nav > .sidebar-brand a:hover {
+        color: #fff;
+        background: none;
+    }
+
+    #menu-toggle {
+        z-index: 1;
+        position: fixed;
+        top: 0;
+        right: 0;
+    }
+
+    #sidebar-wrapper.active {
+        right: 250px;
+        width: 250px;
+        -webkit-transition: all 0.4s ease 0s;
+        -moz-transition: all 0.4s ease 0s;
+        -ms-transition: all 0.4s ease 0s;
+        -o-transition: all 0.4s ease 0s;
+        transition: all 0.4s ease 0s;
+    }
+
+    .toggle {
+        margin: 5px 5px 0 0;
+    }
     .fb-hover {
         position: absolute;
         padding: 3px;
@@ -247,6 +245,15 @@ hr.small {
                 p {
                     font-size: 16pt;
                     color: #80746f;
+                }
+            }
+            @include MQ(S){
+                td {
+                    padding: 8px;
+                    p {
+                        font-size: 18px;
+                        color: #80746f;
+                    }
                 }
             }
         }
@@ -549,7 +556,26 @@ hr.small {
     		border: 7px solid transparent;
     		border-right: 7px solid $color-3;
     	}
-
+        @include MQ(S) {
+            h2 {
+                font-size: 18px;
+                font-family: 'Raleway', sans-serif;
+            }
+            p {
+                font-size:14px;
+                font-family: 'Raleway', sans-serif;
+            }
+            li {
+                h3 {
+                    font-size: 18px;
+                    font-family: 'Raleway', sans-serif;
+                }
+                span {
+                    font-size: 14px;
+                    font-family: 'Raleway', sans-serif;
+                }
+            }
+        }
     	@include MQ(M) {
     		h2 {
     			@include font-size(20px);
@@ -828,10 +854,10 @@ hr.small {
 
 /* The Close Button */
 .close {
-  color: #e0dbdb;
-  position: absolute;
-  top: 50px;
-  right: 470px;
+  color: #000;
+  //position: absolute;
+  //top: 50px;
+  //right: 470px;
   font-size: 50px;
   font-weight: bold;
   opacity: 1;
@@ -840,7 +866,7 @@ hr.small {
 
 .close:hover,
 .close:focus {
-  color: #fff;
+  color: #e0dbdb;
   text-decoration: none;
   cursor: pointer;
   opacity: 1;
@@ -1112,14 +1138,10 @@ img.hover-shadow {
         background-color:white;
     }
 
-    @media only screen and (max-width: 580px) {
+    @media only screen and (min-width: 480px) {
     	#form-div{
-    		left: 3%;
-    		margin-right: 3%;
-    		width: 88%;
-    		margin-left: 0;
-    		padding-left: 3%;
-    		padding-right: 3%;
+    		width: 100%;
+    		padding: 25px;
     	}
     }
 }
