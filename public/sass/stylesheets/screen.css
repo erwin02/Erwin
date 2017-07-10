@@ -996,26 +996,27 @@ img.hover-shadow {
 /* line 956, ../sass/themes/_index.scss */
 .img-portfolio {
   margin: 0 auto;
+  cursor: pointer;
 }
 
-/* line 960, ../sass/themes/_index.scss */
+/* line 961, ../sass/themes/_index.scss */
 .img-portfolio:hover {
   opacity: 0.8;
 }
 
 /* Call to Action */
-/* line 966, ../sass/themes/_index.scss */
+/* line 967, ../sass/themes/_index.scss */
 .call-to-action {
   padding: 50px 0;
 }
 
-/* line 970, ../sass/themes/_index.scss */
+/* line 971, ../sass/themes/_index.scss */
 .call-to-action .btn {
   margin: 10px;
 }
 
 /* Contact */
-/* line 975, ../sass/themes/_index.scss */
+/* line 976, ../sass/themes/_index.scss */
 #contact {
   min-height: 100vh;
   background-image: url(/public/images/feedback-img.jpg);
@@ -1024,14 +1025,14 @@ img.hover-shadow {
   font-family: 'Raleway', sans-serif;
   /* Icons ---------------------------------- */
 }
-/* line 982, ../sass/themes/_index.scss */
+/* line 983, ../sass/themes/_index.scss */
 #contact h2 {
   font-size: 28pt;
   font-weight: bold;
   text-align: center;
   color: #fff;
 }
-/* line 988, ../sass/themes/_index.scss */
+/* line 989, ../sass/themes/_index.scss */
 #contact hr {
   width: 140px;
   height: 8px;
@@ -1041,13 +1042,13 @@ img.hover-shadow {
   -moz-border-radius: 20px;
   border-radius: 20px;
 }
-/* line 997, ../sass/themes/_index.scss */
+/* line 998, ../sass/themes/_index.scss */
 #contact #form-main {
   width: 100%;
   float: left;
   padding-top: 0px;
 }
-/* line 1002, ../sass/themes/_index.scss */
+/* line 1003, ../sass/themes/_index.scss */
 #contact #form-div {
   background-color: rgba(72, 72, 72, 0.4);
   padding-left: 35px;
@@ -1058,7 +1059,7 @@ img.hover-shadow {
   -moz-border-radius: 7px;
   -webkit-border-radius: 7px;
 }
-/* line 1018, ../sass/themes/_index.scss */
+/* line 1019, ../sass/themes/_index.scss */
 #contact .feedback-input {
   color: #3c3c3c;
   font-family: Helvetica, Arial, sans-serif;
@@ -1076,7 +1077,7 @@ img.hover-shadow {
   box-sizing: border-box;
   border: 3px solid transparent;
 }
-/* line 1036, ../sass/themes/_index.scss */
+/* line 1037, ../sass/themes/_index.scss */
 #contact .feedback-input:focus {
   background: #fff;
   box-shadow: 0;
@@ -1085,19 +1086,19 @@ img.hover-shadow {
   outline: none;
   padding: 13px 13px 13px 54px;
 }
-/* line 1045, ../sass/themes/_index.scss */
+/* line 1046, ../sass/themes/_index.scss */
 #contact .focused {
   color: #30aed6;
   border: #30aed6 solid 3px;
 }
-/* line 1051, ../sass/themes/_index.scss */
+/* line 1052, ../sass/themes/_index.scss */
 #contact #name {
   background-image: url(/public/images/contact/name.svg);
   background-size: 30px 30px;
   background-position: 11px 8px;
   background-repeat: no-repeat;
 }
-/* line 1058, ../sass/themes/_index.scss */
+/* line 1059, ../sass/themes/_index.scss */
 #contact #name:focus {
   background-image: url(/public/images/contact/name.svg);
   background-size: 30px 30px;
@@ -1105,40 +1106,40 @@ img.hover-shadow {
   background-position: 11px 8px;
   background-repeat: no-repeat;
 }
-/* line 1066, ../sass/themes/_index.scss */
+/* line 1067, ../sass/themes/_index.scss */
 #contact #email {
   background-image: url(/public/images/contact/email.svg);
   background-size: 30px 30px;
   background-position: 11px 8px;
   background-repeat: no-repeat;
 }
-/* line 1073, ../sass/themes/_index.scss */
+/* line 1074, ../sass/themes/_index.scss */
 #contact #email:focus {
   background-image: url(/public/images/contact/email.svg);
   background-size: 30px 30px;
   background-position: 11px 8px;
   background-repeat: no-repeat;
 }
-/* line 1080, ../sass/themes/_index.scss */
+/* line 1081, ../sass/themes/_index.scss */
 #contact #comment {
   background-image: url(/public/images/contact/comment.svg);
   background-size: 30px 30px;
   background-position: 11px 8px;
   background-repeat: no-repeat;
 }
-/* line 1087, ../sass/themes/_index.scss */
+/* line 1088, ../sass/themes/_index.scss */
 #contact textarea {
   width: 100%;
   height: 150px;
   line-height: 150%;
   resize: vertical;
 }
-/* line 1094, ../sass/themes/_index.scss */
+/* line 1095, ../sass/themes/_index.scss */
 #contact input:hover, #contact textarea:hover,
 #contact input:focus, #contact textarea:focus {
   background-color: white;
 }
-/* line 1099, ../sass/themes/_index.scss */
+/* line 1100, ../sass/themes/_index.scss */
 #contact #button-blue {
   float: left;
   width: 100%;
@@ -1155,16 +1156,16 @@ img.hover-shadow {
   margin-top: -4px;
   font-weight: 700;
 }
-/* line 1116, ../sass/themes/_index.scss */
+/* line 1117, ../sass/themes/_index.scss */
 #contact #button-blue:hover {
   background-color: transparent;
   color: #0493bd;
 }
-/* line 1121, ../sass/themes/_index.scss */
+/* line 1122, ../sass/themes/_index.scss */
 #contact .submit:hover {
   color: #3498db;
 }
-/* line 1125, ../sass/themes/_index.scss */
+/* line 1126, ../sass/themes/_index.scss */
 #contact .ease {
   width: 0px;
   height: 74px;
@@ -1175,13 +1176,13 @@ img.hover-shadow {
   -ms-transition: .3s ease;
   transition: .3s ease;
 }
-/* line 1136, ../sass/themes/_index.scss */
+/* line 1137, ../sass/themes/_index.scss */
 #contact .submit:hover .ease {
   width: 100%;
   background-color: white;
 }
 @media only screen and (min-width: 480px) {
-  /* line 1142, ../sass/themes/_index.scss */
+  /* line 1143, ../sass/themes/_index.scss */
   #contact #form-div {
     width: 100%;
     padding: 25px;
@@ -1189,12 +1190,12 @@ img.hover-shadow {
 }
 
 /* Footer */
-/* line 1152, ../sass/themes/_index.scss */
+/* line 1153, ../sass/themes/_index.scss */
 footer {
   padding: 100px 0;
 }
 
-/* line 1156, ../sass/themes/_index.scss */
+/* line 1157, ../sass/themes/_index.scss */
 #to-top {
   display: none;
   position: fixed;

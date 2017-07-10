@@ -155,10 +155,7 @@ jQuery(document).ready(function($){
                 </div>
             </div>
         </div>
-
-        <!-- /.row -->
     </div>
-    <!-- /.container -->
 </section>
 
 <!-- Resume -->
@@ -172,18 +169,18 @@ jQuery(document).ready(function($){
             <div class="cd-timeline-block">
                 <div class="cd-timeline-img cd-picture">
                     <img src="/public/images/objectives.png" alt="Picture">
-                </div> <!-- cd-timeline-img -->
+                </div>
 
                 <div class="cd-timeline-content">
                     <h2>OBJECTIVES</h2>
                     <p>To be part of prestigious and dynamic company, be able to use my skill and contribute for the growth and success of the company through my hard work, dedication and perseverance.</p>
-                </div> <!-- cd-timeline-content -->
-            </div> <!-- cd-timeline-block -->
+                </div>
+            </div>
 
             <div class="cd-timeline-block">
                 <div class="cd-timeline-img cd-movie">
                     <img src="/public/images/experience.png" alt="Movie">
-                </div> <!-- cd-timeline-img -->
+                </div>
 
                 <div class="cd-timeline-content">
                     <h2>SOFTWARE ENGINEER / FRONT-END WEB DEVELOPER </h2>
@@ -201,13 +198,13 @@ jQuery(document).ready(function($){
                         -	Create Notification Backstage Layout.
                     </p>
                     <span class="cd-date">February 02, 2015</span>
-                </div> <!-- cd-timeline-content -->
-            </div> <!-- cd-timeline-block -->
+                </div>
+            </div>
 
             <div class="cd-timeline-block">
                 <div class="cd-timeline-img cd-picture">
                     <img src="/public/images/training.png" alt="Picture">
-                </div> <!-- cd-timeline-img -->
+                </div>
 
                 <div class="cd-timeline-content">
                     <h2>TRAINING / SEMINAR ATTENDED</h2>
@@ -222,13 +219,13 @@ jQuery(document).ready(function($){
                         </li>
                     </ul>
                     <span class="cd-date">March 2016</span>
-                </div> <!-- cd-timeline-content -->
-            </div> <!-- cd-timeline-block -->
+                </div>
+            </div>
 
             <div class="cd-timeline-block">
                 <div class="cd-timeline-img cd-movie">
                     <img src="/public/images/education.png" alt="Location">
-                </div> <!-- cd-timeline-img -->
+                </div>
 
                 <div class="cd-timeline-content">
                     <h2>EDUCATION</h2>
@@ -239,8 +236,8 @@ jQuery(document).ready(function($){
                         </li>
                     </ul>
                     <span class="cd-date">April 07, 2014</span>
-                </div> <!-- cd-timeline-content -->
-            </div> <!-- cd-timeline-block -->
+                </div>
+            </div>
 
         </section>
     </div>
@@ -317,12 +314,8 @@ jQuery(document).ready(function($){
                         </div>
                     </div>
                 </div>
-                <!-- /.row (nested) -->
-                <a href="#" class="btn btn-dark">View More Items</a>
             </div>
-            <!-- /.col-lg-10 -->
         </div>
-        <!-- /.row -->
     </div>
     <!-------Pop up Modal--------->
     <div id="myModal" class="modal">
@@ -331,22 +324,30 @@ jQuery(document).ready(function($){
             <span class="close cursor" onclick="closeModal()">&times;</span>
             <div class="mySlides">
                 <div class="numbertext">1 / 4</div>
-                <img class="img-responsive" style="width:100%;" src="/public/images/portfolio/img1.PNG">
+                <a href="http://us.xyzprinting.com/" target="_blank" title="Click to see the link">
+                    <img class="img-responsive" style="width:100%;" src="/public/images/portfolio/img1.PNG">
+                </a>
             </div>
 
             <div class="mySlides">
                 <div class="numbertext">2 / 4</div>
-                <img class="img-responsive" style="width:100%;" src="/public/images/portfolio/img2.PNG">
+                <a href="https://www.xyzeshop.com/us_en/" target="_blank" title="Click to see the link">
+                    <img class="img-responsive" style="width:100%;" src="/public/images/portfolio/img2.PNG">
+                </a>
             </div>
 
             <div class="mySlides">
                 <div class="numbertext">3 / 4</div>
-                <img class="img-responsive" style="width:100%;" src="/public/images/portfolio/img3.PNG">
+                <a href="http://www.xyzprinting.com/XyzProductSerialNumberBackStage" target="_blank" title="Click to see the link">
+                    <img class="img-responsive" style="width:100%;" src="/public/images/portfolio/img3.PNG">
+                </a>
             </div>
 
             <div class="mySlides">
                 <div class="numbertext">4 / 4</div>
-                <img class="img-responsive" style="width:100%;" src="/public/images/portfolio/img4.PNG">
+                <a href="https://support.xyzprinting.com/NotificationBackstage/NotificationView/us_en" target="_blank" title="Click to see the link">
+                    <img class="img-responsive" style="width:100%;" src="/public/images/portfolio/img4.PNG">
+                </a>
             </div>
 
             <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
@@ -380,18 +381,18 @@ jQuery(document).ready(function($){
                 <hr>
                 <div id="form-main">
                     <div id="form-div">
-                        <form class="form" id="form1">
+                        <form class="form" id="form1" action="/">
                             <p class="name">
-                                <input name="name" type="text" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input" placeholder="Name" id="name" />
+                                <input name="name" type="text" class="feedback-input" placeholder="Please enter your name" id="name" required autofocus>
                             </p>
                             <p class="email">
-                                <input name="email" type="text" class="validate[required,custom[email]] feedback-input" id="email" placeholder="Email" />
+                                <input name="email" type="text" class="feedback-input" id="email" placeholder="Please enter your email address" required>
                             </p>
                             <p class="text">
-                                <textarea name="text" class="validate[required,length[6,300]] feedback-input" id="comment" placeholder="Comment"></textarea>
+                                <textarea name="text" class="feedback-input" id="comment" placeholder="Include all the details you can" required></textarea>
                             </p>
                             <div class="submit">
-                                <input type="submit" value="SEND" id="button-blue"/>
+                                <input type="submit" value="SEND" id="button-blue" onclick="sendMail(); return false"/>
                                 <div class="ease"></div>
                             </div>
                         </form>
@@ -616,43 +617,51 @@ jQuery(document).ready(function($){
         });
 </script>
 <script>
-function openModal() {
-  document.getElementById('myModal').style.display = "block";
-}
+    function openModal() {
+        document.getElementById('myModal').style.display = "block";
+    }
 
-function closeModal() {
-  document.getElementById('myModal').style.display = "none";
-}
+    function closeModal() {
+        document.getElementById('myModal').style.display = "none";
+    }
 
-var slideIndex = 1;
-showSlides(slideIndex);
+    var slideIndex = 1;
+    showSlides(slideIndex);
 
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
 
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
 
-function showSlides(n) {
-  var i;
-  var slides = document.getElementsByClassName("mySlides");
-  var dots = document.getElementsByClassName("demo");
-  var captionText = document.getElementById("caption");
-  if (n > slides.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
-  }
-  for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex-1].style.display = "block";
-  dots[slideIndex-1].className += " active";
-  captionText.innerHTML = dots[slideIndex-1].alt;
-}
+    function showSlides(n) {
+          var i;
+          var slides = document.getElementsByClassName("mySlides");
+          var dots = document.getElementsByClassName("demo");
+          var captionText = document.getElementById("caption");
+          if (n > slides.length) {slideIndex = 1}
+          if (n < 1) {slideIndex = slides.length}
+          for (i = 0; i < slides.length; i++) {
+              slides[i].style.display = "none";
+          }
+          for (i = 0; i < dots.length; i++) {
+              dots[i].className = dots[i].className.replace(" active", "");
+          }
+          slides[slideIndex-1].style.display = "block";
+          dots[slideIndex-1].className += " active";
+          captionText.innerHTML = dots[slideIndex-1].alt;
+    }
 </script>
-
+<script>
+function sendMail() {
+    var link = "mailto:amularerwin@gmail.com"
+             + "&subject=" + escape("Website portfolio")
+             + "&body=" + escape(document.getElementById('comment').value)
+    ;
+    window.location.href = link;
+    }
+</script>
 
 
